@@ -43,7 +43,7 @@ local TabsFrame = CreateFrame("Frame", nil, UIParent)
 local TicketsTabButton = CreateFrame("Button", nil, TabsFrame, "UIPanelButtonGrayTemplate")
 TicketsTabButton:SetPoint("TOPLEFT", TicketMainFrame, 31, -5)
 TicketsTabButton:RegisterForDrag("LeftButton")
-TicketsTabButton:SetText("Tickets")
+TicketsTabButton:SetText("求助卡")
 TicketsTabButton:SetWidth(60)
 TicketsTabButton:SetHeight(25)
 TicketsTabButton:SetPushedTextOffset(0, 0)
@@ -89,32 +89,32 @@ TicketInputBox:EnableMouseWheel(true)
 
 local TicketViewButton = CreateFrame("Button", nil, TicketMainFrame, "UIPanelButtonGrayTemplate")
 TicketViewButton:SetPoint("TOPLEFT", 80, -30)
-TicketViewButton:SetText("View")
+TicketViewButton:SetText("查看")
 
 local TicketCloseButton = CreateFrame("Button", nil, TicketMainFrame, "UIPanelButtonGrayTemplate")
 TicketCloseButton:SetPoint("TOPLEFT", 5, -55)
-TicketCloseButton:SetText("Close")
+TicketCloseButton:SetText("结束该卡")
 
 local TicketInfoButton = CreateFrame("Button", nil, TicketMainFrame, "UIPanelButtonGrayTemplate")
 TicketInfoButton:SetPoint("TOPLEFT", 80, -55)
-TicketInfoButton:SetText("More info")
+TicketInfoButton:SetText("更多...")
 
 local TicketAssignButton = CreateFrame("Button", nil, TicketMainFrame, "UIPanelButtonGrayTemplate")
 TicketAssignButton:SetPoint("TOPLEFT", 5, -80)
-TicketAssignButton:SetText("Assign")
+TicketAssignButton:SetText("指派")
 local AssignMenuFrame = CreateFrame("Frame", "AssignMenuFrame", UIParent, "UIDropDownMenuTemplate")
 
 local TicketOnlineButton = CreateFrame("Button", nil, TicketMainFrame, "UIPanelButtonGrayTemplate")
 TicketOnlineButton:SetPoint("TOPLEFT", 80, -80)
-TicketOnlineButton:SetText("Online")
+TicketOnlineButton:SetText("在线")
 
 local TicketUnassignButton = CreateFrame("Button", nil, TicketMainFrame, "UIPanelButtonGrayTemplate")
 TicketUnassignButton:SetPoint("TOPLEFT", 5, -105)
-TicketUnassignButton:SetText("Unassign")
+TicketUnassignButton:SetText("不指派")
 
 local TicketListButton = CreateFrame("Button", nil, TicketMainFrame, "UIPanelButtonGrayTemplate")
 TicketListButton:SetPoint("TOPLEFT", 80, -105)
-TicketListButton:SetText("List")
+TicketListButton:SetText("列表")
 
 for i,value in pairs({ TicketViewButton, TicketCloseButton, TicketInfoButton, TicketAssignButton, TicketOnlineButton, TicketUnassignButton, TicketListButton }) do
 	value:SetWidth(75)
@@ -130,25 +130,25 @@ GMTabFrame:Hide()
 
 local GMModeFrame = CreateFrame("Button", nil, GMTabFrame, "UIPanelButtonGrayTemplate")
 GMModeFrame:SetPoint("TOPLEFT", TicketMainFrame, 5, -30)
-GMModeFrame:SetText("GM Mode")
+GMModeFrame:SetText("GM 模式")
 local GMModeButton = CreateFrame("CheckButton", nil, GMTabFrame, "InterfaceOptionsCheckButtonTemplate")
 GMModeButton:SetPoint("TOPLEFT", TicketMainFrame, 105, -30)
 
 local GMInvisibleFrame = CreateFrame("Button", nil, GMTabFrame, "UIPanelButtonGrayTemplate")
 GMInvisibleFrame:SetPoint("TOPLEFT", TicketMainFrame, 5, -55)
-GMInvisibleFrame:SetText("Invisible")
+GMInvisibleFrame:SetText("不可见")
 local GMInvisibleButton = CreateFrame("CheckButton", nil, GMTabFrame, "InterfaceOptionsCheckButtonTemplate")
 GMInvisibleButton:SetPoint("TOPLEFT", TicketMainFrame, 105, -55)
 
 local GMBadgeFrame = CreateFrame("Button", nil, GMTabFrame, "UIPanelButtonGrayTemplate")
 GMBadgeFrame:SetPoint("TOPLEFT", TicketMainFrame, 5, -80)
-GMBadgeFrame:SetText("Chat Badge")
+GMBadgeFrame:SetText("GM聊天图标")
 local GMBadgeButton = CreateFrame("CheckButton", nil, GMTabFrame, "InterfaceOptionsCheckButtonTemplate")
 GMBadgeButton:SetPoint("TOPLEFT", TicketMainFrame, 105, -80)
 
 local GMWhispersFrame = CreateFrame("Button", nil, GMTabFrame, "UIPanelButtonGrayTemplate")
 GMWhispersFrame:SetPoint("TOPLEFT", TicketMainFrame, 5, -105)
-GMWhispersFrame:SetText("Whisp. OFF")
+GMWhispersFrame:SetText("关闭私聊")
 local GMWhispersButton = CreateFrame("CheckButton", nil, GMTabFrame, "InterfaceOptionsCheckButtonTemplate")
 GMWhispersButton:SetPoint("TOPLEFT", TicketMainFrame, 105, -105)
 
@@ -190,13 +190,13 @@ local SettingsFont = SettingsFrame:CreateFontString(nil, "ARTWORK", "GameFontNor
 SettingsFont:SetPoint("TOPLEFT", SettingsFrame, 50, -5)
 SettingsFont:SetFont("Fonts\\FRIZQT__.TTF", 20)
 SettingsFont:SetJustifyH("LEFT")
-SettingsFont:SetText("Settings")
+SettingsFont:SetText("设置")
 
 local SettingsScalingFont = SettingsFrame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
 SettingsScalingFont:SetPoint("TOPLEFT", SettingsFrame, 10, -40)
 SettingsScalingFont:SetFont("Fonts\\FRIZQT__.TTF", 18)
 SettingsScalingFont:SetJustifyH("LEFT")
-SettingsScalingFont:SetText("Scaling:")
+SettingsScalingFont:SetText("缩放:")
 
 local SettingsScalingSlider = CreateFrame("Slider", "SettingsScalingSlider", SettingsFrame, "OptionsSliderTemplate")
 SettingsScalingSlider:ClearAllPoints()
@@ -213,35 +213,35 @@ local SettingsColorFont = SettingsFrame:CreateFontString(nil, "ARTWORK", "GameFo
 SettingsColorFont:SetPoint("TOPLEFT", SettingsFrame, 10, -70)
 SettingsColorFont:SetFont("Fonts\\FRIZQT__.TTF", 18)
 SettingsColorFont:SetJustifyH("LEFT")
-SettingsColorFont:SetText("Color:")
+SettingsColorFont:SetText("颜色:")
 
 local SettingsBlackFont = SettingsFrame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-SettingsBlackFont:SetText("|cffffffffBlack")
+SettingsBlackFont:SetText("|cffffffff黑色")
 
 local SettingsBlackButton = CreateFrame("CheckButton", nil, SettingsFrame, "InterfaceOptionsCheckButtonTemplate")
 
 local SettingsRedFont = SettingsFrame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-SettingsRedFont:SetText("|cffffffffRed")
+SettingsRedFont:SetText("|cffffffff红色")
 
 local SettingsRedButton = CreateFrame("CheckButton", nil, SettingsFrame, "InterfaceOptionsCheckButtonTemplate")
 
 local SettingsGreenFont = SettingsFrame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-SettingsGreenFont:SetText("|cffffffffGreen")
+SettingsGreenFont:SetText("|cffffffff绿色")
 
 local SettingsGreenButton = CreateFrame("CheckButton", nil, SettingsFrame, "InterfaceOptionsCheckButtonTemplate")
 
 local SettingsBlueFont = SettingsFrame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-SettingsBlueFont:SetText("|cffffffffBlue")
+SettingsBlueFont:SetText("|cffffffff蓝色")
 
 local SettingsBlueButton = CreateFrame("CheckButton", nil, SettingsFrame, "InterfaceOptionsCheckButtonTemplate")
 
 local SettingsPurpleFont = SettingsFrame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-SettingsPurpleFont:SetText("|cffffffffPurple")
+SettingsPurpleFont:SetText("|cffffffff紫色")
 
 local SettingsPurpleButton = CreateFrame("CheckButton", nil, SettingsFrame, "InterfaceOptionsCheckButtonTemplate")
 
 local SettingsRainbowFont = SettingsFrame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-SettingsRainbowFont:SetText("|cffffffffRainbow")
+SettingsRainbowFont:SetText("|cffffffff彩虹色")
 
 local SettingsRainbowButton = CreateFrame("CheckButton", nil, SettingsFrame, "InterfaceOptionsCheckButtonTemplate")
 
@@ -434,8 +434,8 @@ HideButton:SetScript("OnDragStop", function() TicketParentFrame:StopMovingOrSizi
 HideButton:SetScript("OnEnter", function()
 	if not TicketParentFrame:IsShown() then
 		GameTooltip:SetOwner(HideButton, "ANCHOR_TOPRIGHT", 63, 0)
-		GameTooltip:SetText("|cffffffffPimpMyTickets|r")
-		GameTooltip:AddLine("Left click to open.\nLeft click and drag to move.")
+		GameTooltip:SetText("|cffffffffGM助手|r")
+		GameTooltip:AddLine("左键打开.\n左键并按下可拖动.")
 		GameTooltip:Show()
 	end
 end)
@@ -457,13 +457,13 @@ HideButton:SetScript("OnClick", function()
 		if savedSettings[2] ~= nil and savedSettings[2] == "rainbow" then
 			HideButton:SetText("|cffff0000P|cfff62f02i|cffee5b05m|cffe58207p|cffdda50aM|cffd4c40cy|cffb7cc0dT|cff8fc30fi|cff6abb11c|cff48b212k|cff2ba913e|cff14a118t|cff149931s")
 		else
-			HideButton:SetText("PimpMyTickets")
+			HideButton:SetText("GM助手")
 		end
 		TicketParentFrame:SetClampedToScreen(false)
 		if not TicketParentFrame:IsShown() then
 			GameTooltip:SetOwner(HideButton, "ANCHOR_TOPRIGHT", 63, 0)
-			GameTooltip:SetText("|cffffffffPimpMyTickets|r")
-			GameTooltip:AddLine("Left click to open.\nLeft click and drag to move.")
+			GameTooltip:SetText("|cffffffffGM助手|r")
+			GameTooltip:AddLine("左键打开.\n左键并按下可拖动.")
 			GameTooltip:Show()
 		end
 	else
@@ -556,7 +556,7 @@ TicketInputBox:SetScript("OnEnterPressed", function()
 		SendChatMessage(".ticket viewid "..TicketInputBox:GetText(), "GUILD", nil)
 	else
 		GameTooltip:SetOwner(HideButton, "ANCHOR_RIGHT", -33, 3)
-		GameTooltip:SetText("Please enter a ticket number")
+		GameTooltip:SetText("请输入求助卡编号")
 		GameTooltip:Show()
 		GameTooltip:FadeOut()
 	end
@@ -574,7 +574,7 @@ TicketViewButton:SetScript("OnClick", function()
 		SendChatMessage(".ticket viewid "..TicketInputBox:GetText(), "GUILD", nil)
 	else
 		GameTooltip:SetOwner(HideButton, "ANCHOR_RIGHT", -33, 3)
-		GameTooltip:SetText("Please enter a ticket number")
+		GameTooltip:SetText("请输入求助卡编号")
 		GameTooltip:Show()
 		GameTooltip:FadeOut()
 	end
@@ -601,12 +601,12 @@ TicketCloseButton:SetScript("OnClick", function()
 		end
 	elseif assignedTicketTable[TicketInputBox:GetText()] ~= UnitName("player") then
 		GameTooltip:SetOwner(HideButton, "ANCHOR_RIGHT", -33, 3)
-		GameTooltip:SetText("Ticket assigned to another GM")
+		GameTooltip:SetText("求助卡指派给了另一个GM")
 		GameTooltip:Show()
 		GameTooltip:FadeOut()
 	else
 		GameTooltip:SetOwner(HideButton, "ANCHOR_RIGHT", -33, 3)
-		GameTooltip:SetText("Please enter a ticket number")
+		GameTooltip:SetText("请输入求助卡编号")
 		GameTooltip:Show()
 		GameTooltip:FadeOut()
 	end
@@ -616,12 +616,12 @@ TicketInfoButton:SetScript("OnClick", function()
 	TicketInputBox:ClearFocus()
 	if TicketInputBox:GetText() == "" then
 		GameTooltip:SetOwner(HideButton, "ANCHOR_RIGHT", -33, 3)
-		GameTooltip:SetText("Please enter a ticket number")
+		GameTooltip:SetText("请输入求助卡编号")
 		GameTooltip:Show()
 		GameTooltip:FadeOut()
 	elseif TicketInputBox:GetText() ~= currentTicketID then
 		GameTooltip:SetOwner(HideButton, "ANCHOR_RIGHT", -33, 3)
-		GameTooltip:SetText("Please view this ticket beforehand")
+		GameTooltip:SetText("请事先查看该求助卡")
 		GameTooltip:Show()
 		GameTooltip:FadeOut()
 	elseif currentTicketName == "Spam Report" then
@@ -631,34 +631,38 @@ TicketInfoButton:SetScript("OnClick", function()
 		GameTooltip:FadeOut()
 	elseif currentTicketName == "Not Found" then
 		GameTooltip:SetOwner(HideButton, "ANCHOR_RIGHT", -33, 3)
-		GameTooltip:SetText("Ticket not found")
+		GameTooltip:SetText("求助卡未找到")
 		GameTooltip:Show()
 		GameTooltip:FadeOut()
 	else
 		PlaySound("UChatScrollButton")
 		local infoMenu = {
 			{ text = currentTicketName, isTitle = true },
-			{ text = "Player info", func = function()
+			{ text = "玩家信息", func = function()
 				PlaySound("UChatScrollButton")
 				ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", TicketInfoFilter)
 				playerInfoChecked = 1
 				SendChatMessage(".pinfo "..currentTicketName, "GUILD", nil)
 			end },
-			{ text = "Lookup IP", func = function()
+			{ text = "查看IP", func = function()
 				PlaySound("UChatScrollButton")
 				if playerInfoChecked == 1 then
 					PlaySound("UChatScrollButton")
 					SendChatMessage(".lookup player ip "..currentTicketIP, "GUILD", nil)
 				else
 					GameTooltip:SetOwner(HideButton, "ANCHOR_RIGHT", -33, 3)
-					GameTooltip:SetText("You must display 'Player info' first")
+					GameTooltip:SetText("你需要先显示 'Player info'")
 					GameTooltip:Show()
 					GameTooltip:FadeOut()
 				end
 			end },
-			{ text = "Appear", func = function()
+			{ text = "传送至", func = function()
 				PlaySound("UChatScrollButton")
-				SendChatMessage(".appear "..currentTicketName, "GUILD", nil)
+				SendChatMessage(".goname "..currentTicketName, "GUILD", nil)
+			end },
+			{ text = "传送来", func = function()
+				PlaySound("UChatScrollButton")
+				SendChatMessage(".namego "..currentTicketName, "GUILD", nil)
 			end },
 			{ text = "|cffff0000Cancel" },
 		}
@@ -793,12 +797,15 @@ function TicketListing()
 			end
 			_G["TicketListContentFont"..i]:SetPoint("TOPLEFT", 0, ticketListContentHeight)
 			_G["TicketListContentFont"..i]:SetTextColor(0, 0, 0)
-			if onlineTicketTable[value] == 1 then
-				_G["TicketListContentFont"..i]:SetTextColor(0, 0.85, 0)
-			elseif strfind(ticketNameTable[value], "Spam Report Sys") then
-				_G["TicketListContentFont"..i]:SetTextColor(0, 0, 0)
-			else
-				_G["TicketListContentFont"..i]:SetTextColor(0.90, 0, 0)
+			
+			if value ~= nil and ticketNameTable[value] ~= nil then
+				if onlineTicketTable[value] == 1 then
+					_G["TicketListContentFont"..i]:SetTextColor(0, 0.85, 0)
+				elseif strfind(ticketNameTable[value], "Spam Report Sys") then
+					_G["TicketListContentFont"..i]:SetTextColor(0, 0, 0)
+				else
+					_G["TicketListContentFont"..i]:SetTextColor(0.90, 0, 0)
+				end
 			end
 			_G["TicketListContentFont"..i]:SetFont("Fonts\\FRIZQT__.TTF", 16)
 			_G["TicketListContentFont"..i]:SetJustifyH("LEFT")
@@ -827,9 +834,9 @@ function TicketListing()
 				if value ~= nil and ticketNameTable[value] ~= nil then
 					GameTooltip:SetOwner(HideButton, "ANCHOR_RIGHT", -33, 3)
 					if assignedTicketTable[value] ~= nil and assignedTicketTable[value] ~= "" then
-						GameTooltip:SetText("Ticket #"..value.." | Created by: "..ticketNameTable[value].."\nAssigned to: "..assignedTicketTable[value])
+						GameTooltip:SetText("求助卡 #"..value.." | 创建人: "..ticketNameTable[value].."\n指派给了: "..assignedTicketTable[value])
 					else
-						GameTooltip:SetText("Ticket #"..value.." | Created by: "..ticketNameTable[value])
+						GameTooltip:SetText("求助卡 #"..value.." | 创建人: "..ticketNameTable[value])
 					end
 					GameTooltip:Show()
 					GameTooltip:FadeOut()
@@ -908,7 +915,7 @@ TicketAssignButton:SetScript("OnClick", function()
 	TicketInputBox:ClearFocus()
 	if TicketInputBox:GetText() == nil or TicketInputBox:GetText() == "" then
 		GameTooltip:SetOwner(HideButton, "ANCHOR_RIGHT", -33, 3)
-		GameTooltip:SetText("Please enter a ticket number")
+		GameTooltip:SetText("请输入求助卡编号")
 		GameTooltip:Show()
 		GameTooltip:FadeOut()
 	else
@@ -918,7 +925,7 @@ TicketAssignButton:SetScript("OnClick", function()
 			end
 			if guildTable[8] == nil then
 				GameTooltip:SetOwner(HideButton, "ANCHOR_RIGHT", -33, 3)
-				GameTooltip:SetText("Please open your Guild Panel\nand Show Offline Members")
+				GameTooltip:SetText("请打开你的公会面板\n并显示离线成员")
 				GameTooltip:Show()
 				GameTooltip:FadeOut()
 			else
@@ -984,7 +991,7 @@ TicketUnassignButton:SetScript("OnClick", function()
 		TicketListingUpdateFrame:SetScript("OnUpdate", ListUpdate)
 	else
 		GameTooltip:SetOwner(HideButton, "ANCHOR_RIGHT", -33, 3)
-		GameTooltip:SetText("Please enter a ticket number")
+		GameTooltip:SetText("请输入求助卡编号")
 		GameTooltip:Show()
 		GameTooltip:FadeOut()
 	end
@@ -1078,7 +1085,7 @@ SettingsScalingSlider:SetScript("OnValueChanged", function()
 	GMTabFrame:SetScale(currentScaling)
 	TicketListFrame:SetScale(currentScaling)
 	GameTooltip:SetOwner(HideButton, "ANCHOR_RIGHT", -33, 3)
-	GameTooltip:SetText("Scaling: x"..currentScaling)
+	GameTooltip:SetText("缩放倍数: x"..currentScaling)
 	GameTooltip:Show()
 	GameTooltip:FadeOut()
 end)
@@ -1089,7 +1096,7 @@ SettingsScalingSlider:SetScript("OnEnter", function()
 		currentScaling = 1
 	end
 	GameTooltip:SetOwner(HideButton, "ANCHOR_RIGHT", -33, 3)
-	GameTooltip:SetText("Scaling: x"..currentScaling)
+	GameTooltip:SetText("缩放倍数: x"..currentScaling)
 	GameTooltip:Show()
 	GameTooltip:FadeOut()
 end)
@@ -1213,11 +1220,11 @@ local function BanhammerFilter(msg)
 		_, _, playerIP = strfind(msg, "Last IP: (%S+)")
 		StaticPopupDialogs["BANHAMMER_POPUP"] = {
 			text = "",
-			button1 = "Acc. + IP",
-			button3 = "Acc. only",
-			button2 = "Cancel",
+			button1 = "账户+IP",
+			button3 = "只封账户",
+			button2 = "取消",
 			OnShow = function()
-				StaticPopup1Text:SetText("You are going to ban "..playerName.."\n Account: "..playerAcc.."\n IP: "..playerIP.."\n Duration: "..banDuration.."\n Reason: "..banReason)
+				StaticPopup1Text:SetText("你将要封禁 "..playerName.."\n 账户: "..playerAcc.."\n IP: "..playerIP.."\n 封禁时长: "..banDuration.."\n 原因: "..banReason)
 			end,
 			OnAccept = function()
 				SendChatMessage(".ban account "..playerAcc.." "..banDuration.." "..banReason, "GUILD", nil)
@@ -1235,10 +1242,10 @@ local function BanhammerFilter(msg)
 		}
 		StaticPopupDialogs["BANREASON_POPUP"] = {
 			text = "",
-			button1 = "Next",
-			button2 = "Cancel",
+			button1 = "下一步",
+			button2 = "取消",
 			OnShow = function()
-				StaticPopup1Text:SetText("You are going to ban "..playerName.."\n Account: "..playerAcc.."\n IP: "..playerIP.."\n Duration: "..banDuration.."\n\nEnter a ban reason:")
+				StaticPopup1Text:SetText("你将要封禁 "..playerName.."\n 账户: "..playerAcc.."\n IP: "..playerIP.."\n 封禁时长: "..banDuration.."\n\n请输入封禁时长:")
 				StaticPopup1EditBox:SetText("")
 			end,
 			OnAccept = function()
@@ -1266,10 +1273,10 @@ local function BanhammerFilter(msg)
 		}
 		StaticPopupDialogs["BANDURATION_POPUP"] = {
 			text = "",
-			button1 = "Next",
-			button2 = "Cancel",
+			button1 = "下一步",
+			button2 = "取消",
 			OnShow = function()
-				StaticPopup1Text:SetText("You are going to ban "..playerName.."\n Account: "..playerAcc.."\n IP: "..playerIP.."\n\nEnter a ban duration:")
+				StaticPopup1Text:SetText("你将要封禁 "..playerName.."\n 账户: "..playerAcc.."\n IP: "..playerIP.."\n\n 请输入封禁时长:")
 				StaticPopup1EditBox:SetText("")
 			end,
 			OnAccept = function()
@@ -1300,9 +1307,14 @@ local function BanhammerFilter(msg)
 	end
 end
 
-UnitPopupButtons["BANHAMMER_BUTTON"] = { text = "|cffff0000Banhammer", dist = 0 }
+UnitPopupButtons["BANHAMMER_BUTTON"] = { text = "|cffff0000封禁", dist = 0 }
 table.insert(UnitPopupMenus["FRIEND"], #UnitPopupMenus["FRIEND"]-1, "BANHAMMER_BUTTON")
 table.insert(UnitPopupMenus["PLAYER"], #UnitPopupMenus["PLAYER"]-1, "BANHAMMER_BUTTON")
+
+UnitPopupButtons["GONAME_BUTTON"] = { text = "|cffff0000传送至", dist = 0 }
+table.insert(UnitPopupMenus["FRIEND"], #UnitPopupMenus["FRIEND"]-1, "GONAME_BUTTON")
+table.insert(UnitPopupMenus["PLAYER"], #UnitPopupMenus["PLAYER"]-1, "GONAME_BUTTON")
+
 hooksecurefunc("ToggleDropDownMenu", function()
 	local i = 2
 	while (1) do
@@ -1312,13 +1324,20 @@ hooksecurefunc("ToggleDropDownMenu", function()
 				button.func = function()
 					if DropDownList1Button1:GetText() == UnitName("player") then
 						GameTooltip:SetOwner(HideButton, "ANCHOR_RIGHT", -33, 3)
-						GameTooltip:SetText("You have tickets to answer still")
+						GameTooltip:SetText("你还有求助卡等待解决")
 						GameTooltip:Show()
 						GameTooltip:FadeOut()
 					else
 						SendChatMessage(".pinfo "..DropDownList1Button1:GetText(), "GUILD", nil)
 						ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", BanhammerFilter)
 					end
+				end
+				break
+			end
+			
+			if button.value == "GONAME_BUTTON" then
+				button.func = function()
+						SendChatMessage(".goname "..DropDownList1Button1:GetText(), "GUILD", nil)
 				end
 				break
 			end
